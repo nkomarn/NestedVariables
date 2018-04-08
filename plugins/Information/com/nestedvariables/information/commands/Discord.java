@@ -21,6 +21,7 @@ public class Discord implements CommandExecutor {
 		if (sender instanceof Player) {
 			player.sendMessage(ChatColor.translateAlternateColorCodes('&', DiscordPrefix));
 		}
+		return true;
 	}
 
 }
