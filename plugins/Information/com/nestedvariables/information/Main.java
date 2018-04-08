@@ -16,5 +16,8 @@ public class Main extends JavaPlugin{
 	public void onDisable() {
 		System.out.println("Night Night!");
 	}
+	
+	public static Main plugin;
+        plugin = this;
 
 }
