@@ -10,7 +10,8 @@ import org.bukkit.entity.Player;
 
 public class Discord implements CommandExecutor {
 	
-	String DiscordPrefix = getConfig().getString("prefix.Discord");
+	String DiscordPrefix = getConfig().getString("Prefix.Discord");
+	String DiscordEnabled = getConfig().getBoolean("Enabled.Discord");
 	
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
