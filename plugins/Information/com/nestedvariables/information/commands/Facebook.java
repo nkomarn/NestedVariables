@@ -6,17 +6,20 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import com.nestedvariables.information.Main;
+
 public class Facebook implements CommandExecutor{
 	
-	String FacebookPrefix = getConfig().getString("Prefix.Facebook");
-	Boolean FacebookEnabled = getConfig().getBoolean("Enabled.Facebook");
+	String FacebookPrefix = Main.plugin.getConfig().getString("Prefix.Facebook");
+	Boolean FacebookEnabled = Main.plugin.getConfig().getBoolean("Enabled.Facebook");
 	
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args ) {
 		Player player = (Player) sender;
 		if (sender instanceof Player) {
-			player.sendMessage(ChatColor.translateAlternateColorCodes("&", FacebookPrefix));
+			player.sendMessage(ChatColor.translateAlternateColorCodes('&', FacebookPrefix));
 		}
+		return true;
 	}
 
 }
