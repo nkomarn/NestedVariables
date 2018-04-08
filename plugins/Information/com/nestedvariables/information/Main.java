@@ -1,6 +1,5 @@
 package com.nestedvariables.information;
 
-import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import com.nestedvariables.information.commands.*;
@@ -15,11 +14,13 @@ public class Main extends JavaPlugin{
 		getCommand("facebook").setExecutor(new Facebook());
 		getCommand("instagram").setExecutor(new Instagram());
 		getCommand("snapchat").setExecutor(new Snapchat());
-		Plugin = this;
+		plugin = this;
 	}
 	
 	public void onDisable() {
 		System.out.println("Night Night!");
 	}
+	
+	public static Main plugin;
 
 }
