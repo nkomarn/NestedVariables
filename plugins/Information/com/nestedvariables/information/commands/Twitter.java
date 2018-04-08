@@ -10,7 +10,7 @@ public class Twitter implements CommandExecutor{
 	
 
 	String TwitterPrefix = getConfig().getString("Prefix.Twitter");
-	Boolen TwitterEnabled = getConfig().getBoolean("Enabled.Twitter")
+	Boolean TwitterEnabled = getConfig().getBoolean("Enabled.Twitter");
 	
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
