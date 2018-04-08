@@ -1,0 +1,10 @@
+name: OxylBeta
+version: 1.0
+main: techtoolbox.OxylBeta.OxylBeta
+commands:
+    list:
+        usage: /<command> 
+        description: Shows online players.
+    msg:
+        usage: /<command> 
+        description: Sends a message to a player.

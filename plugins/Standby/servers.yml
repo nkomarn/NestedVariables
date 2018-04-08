@@ -1,0 +1,8 @@
+# Add server name, IP, port, startup/shutdown script locations below. Example:
+ servers:
+   Anarchy:
+        name: "Anarchy"
+        IP: 127.0.0.1
+        port: 25565
+        startup: "/home/Documents/TestServer/Spigot/startServer.sh"
+        shutdown: "/home/Documents/TestServer/Spigot/shutdown.sh"

@@ -1,0 +1,34 @@
+#   ____             __   ___                   __      
+#  / __ \_  ____  __/ /  /   |  _____________  / /______
+# / / / / |/_/ / / / /  / /| | / ___/ ___/ _ \/ __/ ___/
+#/ /_/ />  </ /_/ / /  / ___ |(__  |__  )  __/ /_(__  ) 
+#\____/_/|_|\__, /_/  /_/  |_/____/____/\___/\__/____/  
+#          /____/                                       
+# Created by TechToolbox
+# Configuration Version 1.0
+
+# Name of server
+server-name: "Skyblock"
+
+# -------------------- #
+# Title on Join Module #
+# -------------------- #
+title-enabled: true
+
+# Titles that display on player join
+title: "&f&l&6&lOxyl Skyblock&f&l"
+subtitle:
+    new-player: "&aRun &0/help&r&a to get started!"
+    existing-player: "&aWelcome back!"
+
+# ------------------------- #
+# Automatic Shutdown Module #
+# ------------------------- #
+shutdown-enabled: true
+# Shutdown script location
+shutdown-script: "/root/stopSkyblock.sh"
+
+# -------------------- #
+# Warp Commands Module #
+# -------------------- #
+warp-enabled: true

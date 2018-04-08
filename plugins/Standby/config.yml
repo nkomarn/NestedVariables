@@ -1,0 +1,50 @@
+#    _____ __                  ____         
+#   / ___// /_____ _____  ____/ / /_  __  __
+#   \__ \/ __/ __ `/ __ \/ __  / __ \/ / / /
+#  ___/ / /_/ /_/ / / / / /_/ / /_/ / /_/ / 
+# /____/\__/\__,_/_/ /_/\__,_/_.___/\__, /  
+#                                  /____/   
+# Standby 1.0 by TechToolbox (@nkomarn)
+
+# Master switch for plugin
+enabled: true
+
+# Messages
+server-booting: "&8&l(&a&l!&8&l) &aServer booting, you will be connected soon."
+booting-error: "&8&l(&c&l!&8&l) &cAn error occured while booting server. Notify a staff member about this issue."
+connecting: "ass"
+
+# Add server name, IP, port, startup/shutdown script locations below. Example:
+servers:
+    Anarchy:
+        name: "Anarchy"
+        IP: 127.0.0.1
+        port: 25565
+        startup: "/home/Documents/TestServer/Spigot/startServer.sh"
+        shutdown: "/home/Documents/TestServer/Spigot/shutdown.sh"
+    Toaster:
+        name: "Toaster"
+        IP: 127.0.0.1
+        port: 25567
+        startup: "/home/Documents/TestServer/Spigot/startServer.sh"
+        shutdown: "/home/Documents/TestServer/Spigot/shutdown.sh"
+    Skyblock:
+        name: "Skyblock"
+        IP: 127.0.0.1
+        port: 25567
+        startup: "/home/Documents/TestServer/Spigot/startServer.sh"
+        shutdown: "/home/Documents/TestServer/Spigot/shutdown.sh"
+
+# GUI Section
+gui:
+    AnarchyItem:
+        id: 2
+        slot: 1
+        lore: "&8&lSick Stuff"
+        server: "Anarchy"
+    AssItem:
+        id: 2
+        slot: 1
+        name: "&6&lSkyblock"
+        lore: "&8Typical floating islands..."
+        server: "Skyblock"

@@ -1,0 +1,11 @@
+name: OxylHub
+version: 1.0
+main: techtoolbox.OxylHub.OxylHub
+description: Oxyl Hub
+
+commands:
+    servers:
+        usage: /<command> 
+        aliases: [s, server, menu, hub, lobby]
+    asshole:
+        usage: /<command> 

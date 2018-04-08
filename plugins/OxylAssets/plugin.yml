@@ -1,0 +1,35 @@
+name: OxylAssets
+version: 1.0
+main: techtoolbox.OxylAssets.Main
+description: Oxyl Assets 
+
+commands:
+    warp:
+        usage: /<command> 
+        aliases: [w, warps, warp]
+    spawn:
+        usage: /<command>
+        aliases: [s, spawn]
+    gmc:
+        usage: /<command>
+    gma:
+        usage: /<command>
+    gms:
+        usage: /<command>
+    gmsp:
+        usage: /<command>
+    fly:
+        usage: /<command>
+    day:
+        usage: /<command>
+    night:
+        usage: /<command>
+    sun:
+        usage: /<command>
+    rain:
+        usage: /<command>
+    thunder:
+        usage: /<command>
+    menu:
+        usage : /<command>
+        aliases: [m, menu]

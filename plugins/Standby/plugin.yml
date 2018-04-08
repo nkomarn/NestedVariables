@@ -1,0 +1,9 @@
+name: Standby
+version: 1.0
+main: techtoolbox.Standby.Main
+description: "Standby is a resource saver for multi-server Spigot networks. When a server is not in use, Standy shuts it down. The server can get back online if a player requests it from within the GUI."
+
+commands:
+    server:
+        usage: /<command> 
+        aliases: [s, server, servers, menu]

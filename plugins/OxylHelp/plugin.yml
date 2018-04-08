@@ -1,0 +1,9 @@
+name: OxylHelp
+version: 1.0
+main: techtoolbox.OxylHelp.Main
+description: Oxyl Help
+
+commands:
+    help:
+        usage: /<command> 
+        aliases: [h, help, guide, about]
