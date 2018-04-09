@@ -1,0 +1,19 @@
+#Nested Variables Information Plugin Configuration Files
+
+Enabled:
+  Discord: true
+  Twitter: true
+  Facebook: false
+  Youtube: true
+  Twitch: false
+  Instagram: false
+  Snapchat: false
+
+Prefix:
+  Discord: "&7[&3&lDiscord&7]: &r"
+  Twitter: "&7[&a&lTwitter&7]: &r"
+  Facebook: "&7[&9&lFacebook&7]: &r"
+  Youtube: "&7[&c&lYou&f&lTube&7]: &r"
+  Twitch: "&7[&5&lTwitch&7]: &r"
+  Instagram: "&7[&d&lInstagram&7]: &r"
+  Snapchat: "&7[&e&lSnapchat&7]: &r"
