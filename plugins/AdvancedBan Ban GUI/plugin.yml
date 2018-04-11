@@ -1,5 +1,5 @@
 main: com.nestedvariables.dev.abbg.Main
-version: DEV-0.0.7
+version: DEV-0.1.0
 name: AdvancedBans_Ban_GUI
 
 depend: [AdvancedBan]

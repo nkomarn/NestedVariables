@@ -47,6 +47,12 @@ public class ReasonsGUI implements Listener {
 		ItemMeta nameItemMeta = nameItem.getItemMeta();
 		nameItemMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "&f&lInappropriate Username"));
 		nameItem.setItemMeta(nameItemMeta);
+
+		//Create Cape Item
+		ItemStack capeItem = new ItemStack(Material.BANNER, 1, (short) 0);
+		ItemMeta capeItemMeta = capeItem.getItemMeta();
+		capeItemMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "&8&lInappropriate Cape"));
+		capeItem.setItemMeta(capeItemMeta);
 		
 		//Create Disrespect Item
 		ItemStack disrespectItem = new ItemStack(Material.EYE_OF_ENDER, 1, (short) 0);
@@ -54,16 +60,11 @@ public class ReasonsGUI implements Listener {
 		disrespectItemMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "&c&lStaff Disrespect"));
 		disrespectItem.setItemMeta(disrespectItemMeta);
 		
-		//Create Cape Item
-		ItemStack capeItem = new ItemStack(Material.BANNER, 1, (short) 0);
-		ItemMeta capeItemMeta = capeItem.getItemMeta();
-		capeItemMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "&"));
-		capeItem.setItemMeta(capeItemMeta);
-		
 		//Create Spam Item
 		ItemStack spamItem = new ItemStack(Material.BOOK_AND_QUILL, 1, (short) 0);
-		ItemMeta spamItemMeta = capeItem.getItemMeta();
-		spamItemMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "&"));
+		ItemMeta spamItemMeta = spamItem.getItemMeta();
+		spamItemMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "&6&lSpamming"));
+		spamItem.setItemMeta(spamItemMeta);
 		
 		//Set Item Locations
 		Reasons.setItem(0, hackItem);
@@ -71,8 +72,9 @@ public class ReasonsGUI implements Listener {
 		Reasons.setItem(4, advertItem);
 		Reasons.setItem(6, skinItem);
 		Reasons.setItem(8, nameItem);
-		Reasons.setItem(10,  capeItem);
+		Reasons.setItem(10, capeItem);
 		Reasons.setItem(12, disrespectItem);
+		Reasons.setItem(14, spamItem);
 		
 		//Open Inventory
 		player.openInventory(Reasons);
