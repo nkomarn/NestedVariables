@@ -1,0 +1,36 @@
+main: com.nestedvariables.information.Main
+version: 0.1.0
+name: RandomINFO
+
+commands:
+  discord:
+    description: Sends the player the Discord Server invite link.
+    usage: ./discord
+    aliases: [disc]
+  twitter:
+    description: Sends the player the Twitter Account link.
+    usage: ./twitter
+  facebook:
+    description: Sends the player the Facebook Page link.
+    usage: ./facebook
+    aliases: [fb]
+  instagram:
+    description: Sends the player the Instagram Profile link.
+    usage: ./instagram
+    aliases: [insta, ig]
+  snapchat:
+    description: Sends the player the Snapchat Profile Link
+    usage: ./snapchat
+    aliases: [sc]
+  kyle:
+    description: Easter Egg for the vigilant.
+    usage: ./kyle
+    aliases: [kylie, kaylie]
+  twitboi:
+    description: Easter Egg for the vigilant.
+    usage: ./twitboi
+    aliases: [tyler, mavveh, mav, twit]
+  info:
+    description: Lists all the social media the specified user is on.
+    usage: ./info <name>
+  
