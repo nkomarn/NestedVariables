@@ -1,19 +1,27 @@
 package com.nestedvariables.dev.abbg.listeners;
 
+import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.SkullMeta;
 
+import com.nestedvariables.dev.abbg.inventories.AppealsGUI;
+import com.nestedvariables.dev.abbg.inventories.HistoryGUI;
 import com.nestedvariables.dev.abbg.inventories.PlayerGUI;
 import com.nestedvariables.dev.abbg.inventories.Reasons2GUI;
 import com.nestedvariables.dev.abbg.inventories.ReasonsGUI;
+import com.nestedvariables.dev.abbg.inventories.ReportsGUI;
 import com.nestedvariables.dev.abbg.inventories.TimeGUI;
 
 public class InventoryClick implements Listener {
 
 	public static Integer duration;
+	public static Integer durationInvis; // Integer for Internal use only.
 	public static String playerName;
 	public static String operator;
 	public static String type;
@@ -23,6 +31,8 @@ public class InventoryClick implements Listener {
 	public static String end;
 	public static String reason2;
 	public static String search;
+	public static String durationText;
+	public static String durationTextShort;
 
 	@EventHandler
 	public void inventoryClickEvent(InventoryClickEvent event) {
@@ -34,19 +44,45 @@ public class InventoryClick implements Listener {
 			int slot = event.getSlot();
 			if (slot == 1) {
 				Player player = (Player) event.getWhoClicked();
-				type = " ";
+				type = "tempban ";
 				operator = event.getWhoClicked().getName();
 				event.setCancelled(true);
 				player.closeInventory();
-				PlayerGUI.openPlayerGUI(player);
+				Inventory players = Bukkit.createInventory(null, 54, "Online players");
+
+				int i = 0;
+				for (Player all : Bukkit.getOnlinePlayers()) {
+
+					ItemStack skull = new ItemStack(Material.SKULL_ITEM, 1, (byte) 3);
+					SkullMeta skullMeta = (SkullMeta) skull.getItemMeta();
+					skullMeta.setOwner(all.getName());
+					skullMeta.setDisplayName(all.getName());
+					skull.setItemMeta(skullMeta);
+					players.setItem(i, skull);
+					i++;
+				}
+				player.openInventory(players);
 				return;
 			} else if (slot == 3) {
 				Player player = (Player) event.getWhoClicked();
-				type = "/warn ";
+				type = "warn ";
 				operator = event.getWhoClicked().getName();
 				event.setCancelled(true);
 				player.closeInventory();
-				PlayerGUI.openPlayerGUI(player);
+					Inventory players = Bukkit.createInventory(null, 54, "Online players");
+
+					int i = 0;
+					for (Player all : Bukkit.getOnlinePlayers()) {
+
+						ItemStack skull = new ItemStack(Material.SKULL_ITEM, 1, (byte) 3);
+						SkullMeta skullMeta = (SkullMeta) skull.getItemMeta();
+						skullMeta.setOwner(all.getName());
+						skullMeta.setDisplayName(all.getName());
+						skull.setItemMeta(skullMeta);
+						players.setItem(i, skull);
+						i++;
+					}
+					player.openInventory(players);
 				return;
 			} else if (slot == 5) {
 				Player player = (Player) event.getWhoClicked();
@@ -54,7 +90,20 @@ public class InventoryClick implements Listener {
 				operator = event.getWhoClicked().getName();
 				event.setCancelled(true);
 				player.closeInventory();
-				PlayerGUI.openPlayerGUI(player);
+				Inventory players = Bukkit.createInventory(null, 54, "Online players");
+
+				int i = 0;
+				for (Player all : Bukkit.getOnlinePlayers()) {
+
+					ItemStack skull = new ItemStack(Material.SKULL_ITEM, 1, (byte) 3);
+					SkullMeta skullMeta = (SkullMeta) skull.getItemMeta();
+					skullMeta.setOwner(all.getName());
+					skullMeta.setDisplayName(all.getName());
+					skull.setItemMeta(skullMeta);
+					players.setItem(i, skull);
+					i++;
+				}
+				player.openInventory(players);
 				return;
 			} else if (slot == 7) {
 				Player player = (Player) event.getWhoClicked();
@@ -62,20 +111,45 @@ public class InventoryClick implements Listener {
 				operator = event.getWhoClicked().getName();
 				event.setCancelled(true);
 				player.closeInventory();
-				PlayerGUI.openPlayerGUI(player);
+				Inventory players = Bukkit.createInventory(null, 54, "Online players");
+
+				int i = 0;
+				for (Player all : Bukkit.getOnlinePlayers()) {
+
+					ItemStack skull = new ItemStack(Material.SKULL_ITEM, 1, (byte) 3);
+					SkullMeta skullMeta = (SkullMeta) skull.getItemMeta();
+					skullMeta.setOwner(all.getName());
+					skullMeta.setDisplayName(all.getName());
+					skull.setItemMeta(skullMeta);
+					players.setItem(i, skull);
+					i++;
+				}
+				player.openInventory(players);
 				return;
 			} else if (slot == 11) {
 				Player player = (Player) event.getWhoClicked();
 				event.setCancelled(true);
 				player.closeInventory();
-				PlayerGUI.openPlayerGUI(player);
 				return;
 			} else if (slot == 13) {
 				Player player = (Player) event.getWhoClicked();
 				command = "/history ";
 				event.setCancelled(true);
 				player.closeInventory();
-				PlayerGUI.openPlayerGUI(player);
+				Inventory players = Bukkit.createInventory(null, 54, "Online players");
+
+				int i = 0;
+				for (Player all : Bukkit.getOnlinePlayers()) {
+
+					ItemStack skull = new ItemStack(Material.SKULL_ITEM, 1, (byte) 3);
+					SkullMeta skullMeta = (SkullMeta) skull.getItemMeta();
+					skullMeta.setOwner(all.getName());
+					skullMeta.setDisplayName(all.getName());
+					skull.setItemMeta(skullMeta);
+					players.setItem(i, skull);
+					i++;
+				}
+				player.openInventory(players);
 				return;
 			} else if (slot == 15) {
 				Player player = (Player) event.getWhoClicked();
@@ -93,7 +167,7 @@ public class InventoryClick implements Listener {
 			int slot = event.getSlot();
 			if (slot == 1) {
 				Player player = (Player) event.getWhoClicked();
-				type = " ";
+				type = "tempban";
 				operator = event.getWhoClicked().getName();
 				event.setCancelled(true);
 				player.closeInventory();
@@ -101,7 +175,7 @@ public class InventoryClick implements Listener {
 				return;
 			} else if (slot == 3) {
 				Player player = (Player) event.getWhoClicked();
-				type = "/warn ";
+				type = "warn ";
 				operator = event.getWhoClicked().getName();
 				event.setCancelled(true);
 				player.closeInventory();
@@ -109,7 +183,7 @@ public class InventoryClick implements Listener {
 				return;
 			} else if (slot == 5) {
 				Player player = (Player) event.getWhoClicked();
-				type = "/mute ";
+				type = "tempmute ";
 				operator = event.getWhoClicked().getName();
 				event.setCancelled(true);
 				player.closeInventory();
@@ -117,7 +191,7 @@ public class InventoryClick implements Listener {
 				return;
 			} else if (slot == 7) {
 				Player player = (Player) event.getWhoClicked();
-				type = "/kick ";
+				type = "kick ";
 				operator = event.getWhoClicked().getName();
 				event.setCancelled(true);
 				player.closeInventory();
@@ -127,20 +201,19 @@ public class InventoryClick implements Listener {
 				Player player = (Player) event.getWhoClicked();
 				event.setCancelled(true);
 				player.closeInventory();
-				ReasonsGUI.openReasonsGUI(player);
+				// ReportsGUI.openReportsGUI(player);
 				return;
 			} else if (slot == 13) {
 				Player player = (Player) event.getWhoClicked();
-				command = "/history ";
 				event.setCancelled(true);
 				player.closeInventory();
-				ReasonsGUI.openReasonsGUI(player);
+				// HistoryGUI.openHistoryGUI(player);
 				return;
 			} else if (slot == 15) {
 				Player player = (Player) event.getWhoClicked();
 				event.setCancelled(true);
 				player.closeInventory();
-				ReasonsGUI.openReasonsGUI(player);
+				// AppealsGUI.openAppealsGUI(player);
 				return;
 			} else if (slot == 45) {
 				Player player = (Player) event.getWhoClicked();
@@ -179,49 +252,49 @@ public class InventoryClick implements Listener {
 				reason = "Griefing - ";
 				event.setCancelled(true);
 				player.closeInventory();
-				Time.openTimeGUI(player);
+				TimeGUI.openTimeGUI(player);
 				return;
 			} else if (slot == 4) {
 				Player player = (Player) event.getWhoClicked();
 				reason = "Advertising - ";
 				event.setCancelled(true);
 				player.closeInventory();
-				Time.openTimeGUI(player);
+				TimeGUI.openTimeGUI(player);
 				return;
 			} else if (slot == 6) {
 				Player player = (Player) event.getWhoClicked();
 				reason = "Inappropriate Skin - ";
 				event.setCancelled(true);
 				player.closeInventory();
-				Time.openTimeGUI(player);
+				TimeGUI.openTimeGUI(player);
 				return;
 			} else if (slot == 8) {
 				Player player = (Player) event.getWhoClicked();
 				reason = "Inappropriate Username - ";
 				event.setCancelled(true);
 				player.closeInventory();
-				Time.openTimeGUI(player);
+				TimeGUI.openTimeGUI(player);
 				return;
 			} else if (slot == 10) {
 				Player player = (Player) event.getWhoClicked();
 				reason = "Inappropriate Cape - ";
 				event.setCancelled(true);
 				player.closeInventory();
-				Time.openTimeGUI(player);
+				TimeGUI.openTimeGUI(player);
 				return;
 			} else if (slot == 12) {
 				Player player = (Player) event.getWhoClicked();
 				reason = "Disrespecting Staff - ";
 				event.setCancelled(true);
 				player.closeInventory();
-				Time.openTimeGUI(player);
+				TimeGUI.openTimeGUI(player);
 				return;
 			} else if (slot == 14) {
 				Player player = (Player) event.getWhoClicked();
 				reason = "Spamming - ";
 				event.setCancelled(true);
 				player.closeInventory();
-				Time.openTimeGUI(player);
+				TimeGUI.openTimeGUI(player);
 				return;
 			} else {
 
@@ -289,61 +362,78 @@ public class InventoryClick implements Listener {
 					return;
 				} else if (slot2 == 17) {
 					Player player = (Player) event.getWhoClicked();
-					reason2 = "Jesus - ";
+					reason2 = "Chest-ESP - ";
 					event.setCancelled(true);
 					player.closeInventory();
 					TimeGUI.openTimeGUI(player);
 					return;
-				} if (inventoryName.equals("Duration of Punishment")) {
+				} else if (slot2 == 19) {
+					Player player = (Player) event.getWhoClicked();
+					reason2 = "Player-ESP - ";
+					event.setCancelled(true);
+					player.closeInventory();
+					TimeGUI.openTimeGUI(player);
+					return;
+				}
+				if (inventoryName.equals("Duration of Punishment")) {
 					event.setCancelled(true);
 					int slot3 = event.getSlot();
 					if (slot3 == 1) {
 						Player player = (Player) event.getWhoClicked();
-						type = " ";
-						operator = event.getWhoClicked().getName();
+						duration = 1;
+						durationText = " Hour";
+						durationTextShort = "h";
 						event.setCancelled(true);
 						player.closeInventory();
 						PlayerGUI.openPlayerGUI(player);
 						return;
 					} else if (slot3 == 3) {
 						Player player = (Player) event.getWhoClicked();
-						type = "/warn ";
-						operator = event.getWhoClicked().getName();
+						duration = 1;
+						durationText = " Day";
+						durationTextShort = "d";
 						event.setCancelled(true);
 						player.closeInventory();
 						PlayerGUI.openPlayerGUI(player);
 						return;
 					} else if (slot3 == 5) {
 						Player player = (Player) event.getWhoClicked();
-						type = "/mute ";
-						operator = event.getWhoClicked().getName();
+						duration = 7;
+						durationText = " Day";
+						durationTextShort = "d";
 						event.setCancelled(true);
 						player.closeInventory();
 						PlayerGUI.openPlayerGUI(player);
 						return;
 					} else if (slot3 == 7) {
 						Player player = (Player) event.getWhoClicked();
-						type = "/kick ";
-						operator = event.getWhoClicked().getName();
+						duration = 1;
+						durationText = " Month";
+						durationTextShort = "mo";
 						event.setCancelled(true);
 						player.closeInventory();
 						PlayerGUI.openPlayerGUI(player);
 						return;
 					} else if (slot3 == 11) {
 						Player player = (Player) event.getWhoClicked();
+						duration = 3;
+						durationText = " Months";
 						event.setCancelled(true);
 						player.closeInventory();
 						PlayerGUI.openPlayerGUI(player);
 						return;
 					} else if (slot3 == 13) {
 						Player player = (Player) event.getWhoClicked();
-						command = "/history ";
+						duration = 6;
+						durationText = " Months";
 						event.setCancelled(true);
 						player.closeInventory();
 						PlayerGUI.openPlayerGUI(player);
 						return;
 					} else if (slot3 == 15) {
 						Player player = (Player) event.getWhoClicked();
+						duration = 9;
+						durationText = " Months";
 						event.setCancelled(true);
 						player.closeInventory();
 						PlayerGUI.openPlayerGUI(player);
