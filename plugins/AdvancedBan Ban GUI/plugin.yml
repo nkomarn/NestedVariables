@@ -1,5 +1,5 @@
 main: com.nestedvariables.dev.abbg.Main
-version: DEV-0.1.1
+version: 0.1.2-DEV
 name: AdvancedBans_Ban_GUI
 
 depend: [AdvancedBan]
@@ -10,7 +10,3 @@ commands:
     usage: ./punish <player>
     aliases: [p, pun]
 #    permission: abbg.punish
-  reasons:
-    description: Opens reasons GUI. Temporary Command.
-    usage: ./reasons
-    aliases: [reason, re]

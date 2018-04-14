@@ -39,7 +39,7 @@ public class Reasons2GUI  implements Listener {
 		//Create Fly Item
 		ItemStack flyItem = new ItemStack(Material.FEATHER, 1, (short) 0);
 		ItemMeta flyItemMeta = flyItem.getItemMeta();
-		flyItemMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "&a&lFly"));
+		flyItemMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "&f&lFly"));
 		flyItem.setItemMeta(flyItemMeta);
 		
 		//Create Scaffold Item
@@ -51,7 +51,7 @@ public class Reasons2GUI  implements Listener {
 		//Create Free-cam Item
 		ItemStack camItem = new ItemStack(Material.COMPASS, 1, (short) 0);
 		ItemMeta camItemMeta = camItem.getItemMeta();
-		camItemMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "&f&lFree-cam"));
+		camItemMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "&d&lFree-cam"));
 		camItem.setItemMeta(camItemMeta);
 
 		//Create X-ray Item
@@ -84,6 +84,14 @@ public class Reasons2GUI  implements Listener {
 		fastBowItemMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "&b&lFast-Bow"));
 		fastBowItem.setItemMeta(fastBowItemMeta);
 		
+		//Create AntiKB Item
+		ItemStack antiKBItem = new ItemStack(Material.SLIME_BALL, 1, (short) 0 );
+		ItemMeta antiKBItemMeta = antiKBItem.getItemMeta();
+		antiKBItemMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "&a&lAntiKnockback"));
+		antiKBItem.setItemMeta(antiKBItemMeta);
+		
+		//Create 
+		
 		//Set Item Locations
 		Reasons2.setItem(1, killAuraItem);
 		Reasons2.setItem(3, reachItem);
@@ -95,6 +103,7 @@ public class Reasons2GUI  implements Listener {
 		Reasons2.setItem(15, jesusItem);
 		Reasons2.setItem(17, espCItem);
 		Reasons2.setItem(19, espPItem);
+		Reasons2.setItem(21, antiKBItem);
 		
 		//Open Inventory
 		player.openInventory(Reasons2);

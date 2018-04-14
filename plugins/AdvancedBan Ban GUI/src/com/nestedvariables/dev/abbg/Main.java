@@ -3,7 +3,6 @@ package com.nestedvariables.dev.abbg;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import com.nestedvariables.dev.abbg.commands.Punish;
-import com.nestedvariables.dev.abbg.commands.Reasons;
 import com.nestedvariables.dev.abbg.listeners.InventoryClick;
 import com.nestedvariables.dev.abbg.listeners.InventoryDrag;
 
@@ -25,7 +24,6 @@ public class Main extends JavaPlugin {
 			System.out.println("[AdvancedBanGUI] Please install AdvancedBan.");
 		}
 		getCommand("punish").setExecutor(new Punish());
-		getCommand("reasons").setExecutor(new Reasons()); //Temporary Command.
 		getServer().getPluginManager().registerEvents(new InventoryClick(), this); 
 		getServer().getPluginManager().registerEvents(new InventoryDrag(), this); 
     }
