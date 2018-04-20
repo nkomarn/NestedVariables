@@ -7,6 +7,8 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import com.nestedvariables.dev.abbg.inventories.ReportGUI;
+
 public class Report implements CommandExecutor{
 	
 	@Override
@@ -18,8 +20,7 @@ public class Report implements CommandExecutor{
 
 		else {
 			Player player = (Player) sender;
-			
-			
+			ReportGUI.openReportGUI(player);
 		}
 		return true;
 

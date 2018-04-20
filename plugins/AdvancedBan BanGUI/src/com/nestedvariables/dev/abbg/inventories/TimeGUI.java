@@ -62,7 +62,7 @@ public class TimeGUI implements Listener {
 		//Create 9 Month Item
 		ItemStack nineMonthItem = new ItemStack(Material.RECORD_8, 1, (short) 0);
 		ItemMeta nineMonthItemMeta = nineMonthItem.getItemMeta();
-		nineMonthItemMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "&9 Month Punishment"));
+		nineMonthItemMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "&9&l9 Month Punishment"));
 		nineMonthItem.setItemMeta(nineMonthItemMeta);
 		
 		//Create Perm Item

@@ -2,7 +2,6 @@ package com.nestedvariables.dev.abbg.inventories;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
-import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.inventory.Inventory;
@@ -32,7 +31,7 @@ public class ReportGUI implements Listener {
 		
 		//Set Item Locations
 		Report.setItem(2, bugItem);
-		Report.setItem(3, playerItem);
+		Report.setItem(6, playerItem);
 		
 		
 		player.openInventory(Report);

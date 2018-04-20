@@ -10,8 +10,8 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.SkullMeta;
 
-import com.nestedvariables.dev.abbg.inventories.AppealsGUI;
-import com.nestedvariables.dev.abbg.inventories.HistoryGUI;
+//import com.nestedvariables.dev.abbg.inventories.AppealsGUI;
+//import com.nestedvariables.dev.abbg.inventories.HistoryGUI;
 import com.nestedvariables.dev.abbg.inventories.PlayerGUI;
 import com.nestedvariables.dev.abbg.inventories.Reasons2GUI;
 import com.nestedvariables.dev.abbg.inventories.ReasonsGUI;
@@ -43,13 +43,17 @@ public class InventoryClick implements Listener {
 			int slot = event.getSlot();
 			if (slot == 1) {
 				Player player = (Player) event.getWhoClicked();
-				type = "tempban ";
+				type = "tempban";
 				operator = event.getWhoClicked().getName();
 				event.setCancelled(true);
 				player.closeInventory();
-				Inventory players = Bukkit.createInventory(null, 54, "Online players");
-
+				
 				int i = 0;
+				int invSize;
+
+				invSize = Math.min( 54, (Bukkit.getServer().getOnlinePlayers().size()/9+1)*9);
+				
+				Inventory players = Bukkit.createInventory(null, invSize, "Online players");
 				for (Player all : Bukkit.getOnlinePlayers()) {
 
 					ItemStack skull = new ItemStack(Material.SKULL_ITEM, 1, (byte) 3);
@@ -64,17 +68,20 @@ public class InventoryClick implements Listener {
 				ItemStack item = event.getCurrentItem();
 				playerName = item.getItemMeta().getDisplayName();
 				event.setCancelled(true);
-				ReasonsGUI.openReasonsGUI(player);
 				return;
 			} else if (slot == 3) {
 				Player player = (Player) event.getWhoClicked();
-				type = "warn ";
+				type = "warn";
 				operator = event.getWhoClicked().getName();
 				event.setCancelled(true);
 				player.closeInventory();
-				Inventory players = Bukkit.createInventory(null, 54, "Online players");
-
+				
 				int i = 0;
+				int invSize;
+
+				invSize = Math.min( 54, (Bukkit.getServer().getOnlinePlayers().size()/9+1)*9);
+				
+				Inventory players = Bukkit.createInventory(null, invSize, "Online players");
 				for (Player all : Bukkit.getOnlinePlayers()) {
 
 					ItemStack skull = new ItemStack(Material.SKULL_ITEM, 1, (byte) 3);
@@ -89,17 +96,20 @@ public class InventoryClick implements Listener {
 				ItemStack item = event.getCurrentItem();
 				playerName = item.getItemMeta().getDisplayName();
 				event.setCancelled(true);
-				ReasonsGUI.openReasonsGUI(player);
 				return;
 			} else if (slot == 5) {
 				Player player = (Player) event.getWhoClicked();
-				type = "/mute ";
+				type = "mute";
 				operator = event.getWhoClicked().getName();
 				event.setCancelled(true);
 				player.closeInventory();
-				Inventory players = Bukkit.createInventory(null, 54, "Online players");
-
+				
 				int i = 0;
+				int invSize;
+
+				invSize = Math.min( 54, (Bukkit.getServer().getOnlinePlayers().size()/9+1)*9);
+				
+				Inventory players = Bukkit.createInventory(null, invSize, "Online players");
 				for (Player all : Bukkit.getOnlinePlayers()) {
 
 					ItemStack skull = new ItemStack(Material.SKULL_ITEM, 1, (byte) 3);
@@ -114,17 +124,20 @@ public class InventoryClick implements Listener {
 				ItemStack item = event.getCurrentItem();
 				playerName = item.getItemMeta().getDisplayName();
 				event.setCancelled(true);
-				ReasonsGUI.openReasonsGUI(player);
 				return;
 			} else if (slot == 7) {
 				Player player = (Player) event.getWhoClicked();
-				type = "/kick ";
+				type = "kick";
 				operator = event.getWhoClicked().getName();
 				event.setCancelled(true);
 				player.closeInventory();
-				Inventory players = Bukkit.createInventory(null, 54, "Online players");
-
+				
 				int i = 0;
+				int invSize;
+
+				invSize = Math.min( 54, (Bukkit.getServer().getOnlinePlayers().size()/9+1)*9);
+				
+				Inventory players = Bukkit.createInventory(null, invSize, "Online players");
 				for (Player all : Bukkit.getOnlinePlayers()) {
 
 					ItemStack skull = new ItemStack(Material.SKULL_ITEM, 1, (byte) 3);
@@ -139,7 +152,6 @@ public class InventoryClick implements Listener {
 				ItemStack item = event.getCurrentItem();
 				playerName = item.getItemMeta().getDisplayName();
 				event.setCancelled(true);
-				ReasonsGUI.openReasonsGUI(player);
 				return;
 			} else if (slot == 11) {
 				Player player = (Player) event.getWhoClicked();
@@ -148,12 +160,16 @@ public class InventoryClick implements Listener {
 				return;
 			} else if (slot == 13) {
 				Player player = (Player) event.getWhoClicked();
-				command = "/history ";
+				command = "history";
 				event.setCancelled(true);
 				player.closeInventory();
-				Inventory players = Bukkit.createInventory(null, 54, "Online players");
-
+				
 				int i = 0;
+				int invSize;
+
+				invSize = Math.min( 54, (Bukkit.getServer().getOnlinePlayers().size()/9+1)*9);
+				
+				Inventory players = Bukkit.createInventory(null, invSize, "Online players");
 				for (Player all : Bukkit.getOnlinePlayers()) {
 
 					ItemStack skull = new ItemStack(Material.SKULL_ITEM, 1, (byte) 3);
@@ -168,7 +184,6 @@ public class InventoryClick implements Listener {
 				ItemStack item = event.getCurrentItem();
 				playerName = item.getItemMeta().getDisplayName();
 				event.setCancelled(true);
-				//ReasonsGUI.openReasonsGUI(player);
 				return;
 			} else if (slot == 15) {
 				Player player = (Player) event.getWhoClicked();
@@ -181,75 +196,14 @@ public class InventoryClick implements Listener {
 
 		}
 		if (inventoryName.equals("Online players")) {
-			event.setCancelled(true);
-			int slot = event.getSlot();
-			if (slot == 1) {
-				Player player = (Player) event.getWhoClicked();
-				type = "tempban ";
-				operator = event.getWhoClicked().getName();
-				event.setCancelled(true);
-				player.closeInventory();
-				ReasonsGUI.openReasonsGUI(player);
-				return;
-			} else if (slot == 3) {
-				Player player = (Player) event.getWhoClicked();
-				type = "warn ";
-				operator = event.getWhoClicked().getName();
-				event.setCancelled(true);
-				player.closeInventory();
-				ReasonsGUI.openReasonsGUI(player);
-				return;
-			} else if (slot == 5) {
-				Player player = (Player) event.getWhoClicked();
-				type = "tempmute ";
-				operator = event.getWhoClicked().getName();
-				event.setCancelled(true);
-				player.closeInventory();
-				ReasonsGUI.openReasonsGUI(player);
-				return;
-			} else if (slot == 7) {
-				Player player = (Player) event.getWhoClicked();
-				type = "kick ";
-				operator = event.getWhoClicked().getName();
-				event.setCancelled(true);
-				player.closeInventory();
-				ReasonsGUI.openReasonsGUI(player);
-				return;
-			} else if (slot == 11) {
-				Player player = (Player) event.getWhoClicked();
-				event.setCancelled(true);
-				player.closeInventory();
-				// ReportsGUI.openReportsGUI(player);
-				return;
-			} else if (slot == 13) {
-				Player player = (Player) event.getWhoClicked();
-				event.setCancelled(true);
-				player.closeInventory();
-				// HistoryGUI.openHistoryGUI(player);
-				return;
-			} else if (slot == 15) {
-				Player player = (Player) event.getWhoClicked();
-				event.setCancelled(true);
-				player.closeInventory();
-				// AppealsGUI.openAppealsGUI(player);
-				return;
-			} else if (slot == 45) {
-				Player player = (Player) event.getWhoClicked();
-				event.setCancelled(true);
-				player.closeInventory();
-				return;
-			} else if (slot == 49) {
-				Player player = (Player) event.getWhoClicked();
-				event.setCancelled(true);
-				player.closeInventory();
-				return;
-			} else if (slot == 53) {
-				Player player = (Player) event.getWhoClicked();
-				event.setCancelled(true);
-				player.closeInventory();
-				return;
-			} else {
-			}
+			Player player = (Player) event.getWhoClicked();
+		    ItemStack item = event.getCurrentItem();
+		         playerName = item.getItemMeta().getDisplayName();
+		         player.sendMessage("Variable set to: " + playerName);
+		         event.setCancelled(true);
+		         player.closeInventory();
+		         ReasonsGUI.openReasonsGUI(player);
+		         return;
 		} else {
 
 		}
