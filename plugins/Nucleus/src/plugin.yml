@@ -1,0 +1,25 @@
+main: com.nestedvar.dev.Nucleus.Main
+name: Nucleus
+version: 0.0.1-DEV
+
+commands:
+  fly:
+  
+  gamemode:
+    
+    aliases: [gm,gmode,gamem]
+  
+  item:
+    
+    aliases:[i]
+  ping:
+    
+  tpa:
+  
+  tpahere:
+  
+  
+  
+  
+    
+  
